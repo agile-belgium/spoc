@@ -1,2 +1,36 @@
-hello from layout
-= yield
+<!doctype html>
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title Spoc by agile-belgium
+    %link{:href => "stylesheets/styles.css", :rel => "stylesheet"}/
+    %link{:href => "stylesheets/pygment_trac.css", :rel => "stylesheet"}/
+    %script{:src => "javascripts/scale.fix.js"}
+    %meta{:content => "width=device-width, initial-scale=1, user-scalable=no", :name => "viewport"}/
+    /[if lt IE 9]
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  %body
+    .wrapper
+      %header
+        %h1.header Spoc
+        %p.header A &quot;single point of contact&quot; page for Agile Belgium
+        %ul
+          %li.download
+            %a.buttons{:href => "https://github.com/agile-belgium/spoc/zipball/master"} Download ZIP
+          %li.download
+            %a.buttons{:href => "https://github.com/agile-belgium/spoc/tarball/master"} Download TAR
+          %li
+            %a.buttons.github{:href => "https://github.com/agile-belgium/spoc"} View On GitHub
+        %p.header
+          This project is maintained by
+          %a.header.name{:href => "https://github.com/agile-belgium"} agile-belgium
+      %section
+        = yield
+      %footer
+        %p
+          %small
+            Hosted on
+            %a{:href => "https://pages.github.com"} GitHub Pages
+            using the Dinky theme
+    /[if !IE] <script>fixScale(document);</script>

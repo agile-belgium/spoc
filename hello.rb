@@ -1,5 +1,7 @@
 require 'sinatra'
+set :markdown, layout_engine: :haml, layout: :layout
+
 
 get '/' do
-  haml :index
+  markdown :index
 end
